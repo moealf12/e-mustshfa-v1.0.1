@@ -16,7 +16,7 @@ app.get('/*', (req, res) => {
 });
 
 
-const PORT = 4000 || process.env.PORT
+const PORT =  process.env.PORT || 5000
 
 
 
