@@ -1,6 +1,6 @@
 {
-  "name": "backend",
-  "main": "index.js",
+  "name": "server.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
