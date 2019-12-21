@@ -2,7 +2,7 @@ const express=require('express')
 const app=express()
 const cors=require('cors')
 const mongoose=require('mongoose')
-var path = require('path');
+const path = require("path");
 PORT = 4000 || process.env.PORT
 
 
@@ -31,7 +31,6 @@ app.use(express.urlencoded({extended:false}))
 // uploading file
 const { ApolloServer, gql } = require("apollo-server-express");
 const { createWriteStream, existsSync, mkdirSync } = require("fs");
-const path = require("path");
 
 const {Storage} = require('@google-cloud/storage')
 const files = [];
