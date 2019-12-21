@@ -3,7 +3,16 @@ const app=express()
 const cors=require('cors')
 const mongoose=require('mongoose')
 const path = require("path");
-PORT = 4000 || process.env.PORT
+
+
+
+app.use('/user',require('./routes/user'))
+
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 
 
@@ -26,20 +35,11 @@ app.use(express.urlencoded({extended:false}))
 
 
 
-// end Uploading
 
 
 
 
 
 
-app.use('/user',require('./routes/user'))
-
-app.use(express.static(path.join(__dirname, 'build')));
-
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-
-
+PORT = 4000 || process.env.PORT
 app.listen(PORT,()=>console.log('server is running in '+ PORT))
