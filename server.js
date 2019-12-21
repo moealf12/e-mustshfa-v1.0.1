@@ -15,6 +15,10 @@ app.get('/*', (req, res) => {
 });
 
 
+PORT = 4000 || process.env.PORT
+
+
+
 
 
 
@@ -41,5 +45,4 @@ app.use(express.urlencoded({extended:false}))
 
 
 
-PORT = 4000 || process.env.PORT
 app.listen(PORT,()=>console.log('server is running in '+ PORT))
