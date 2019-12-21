@@ -4,7 +4,7 @@ const cors=require('cors')
 const mongoose=require('mongoose')
 const path = require("path");
 
-app.use(cors())
+
 
 
 app.use('/user',require('./routes/user'))
