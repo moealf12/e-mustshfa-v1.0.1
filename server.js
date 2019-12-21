@@ -14,10 +14,11 @@ app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-mongoose.connect(procces.env.DB,{useNewUrlParser:true,useUnifiedTopology:true})
-.then(res=>console.log('mongoDB is connected'))
-.catch(err=>console.log(err))
-
+mongoose.connect('mongodb+srv://moe:Aa7788000@moe-pxfnp.gcp.mongodb.net/test?retryWrites=true&w=majority'
+,{ useUnifiedTopology: true },
+()=>{
+  console.log('Server is up')
+})
 app.use(cors())
 
 app.use(express.json())
